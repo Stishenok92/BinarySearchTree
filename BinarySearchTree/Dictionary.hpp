@@ -39,9 +39,18 @@ struct Dictionary
         return out;
     }
     
-    friend std::istream& operator>>(std::istream& in, Dictionary& word)
+    friend std::ifstream& operator>>(std::ifstream& in, Dictionary& word)
     {
         in >> word.english >> word.russian >> word.counter;
+        return in;
+    }
+    
+    friend std::istream& operator>>(std::istream& in, Dictionary& word)
+    {
+        std::cout << "\nEnter a word in english: ";
+        std::cin >> word.english;
+        std::cout << "Enter a word in russian: ";
+        std::cin >> word.russian;
         return in;
     }
 };

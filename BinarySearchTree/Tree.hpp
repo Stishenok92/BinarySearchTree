@@ -40,4 +40,5 @@ private:
     void deleteTree(Node<Type>*);
     Node<Type>* findEdgeLeft(Node<Type>*);
     Node<Type>* findEdgeRight(Node<Type>*);
+    
 };

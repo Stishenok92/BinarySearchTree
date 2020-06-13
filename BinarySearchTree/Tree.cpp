@@ -43,6 +43,7 @@ Node<Type>* Tree<Type>::erase(Node<Type>* root, const Type& key)
     
     if (root == nullptr)
     {
+        std::cout << "Error! Not found!\n";
         return nullptr;
     }
     else if (key < root->data)
@@ -111,7 +112,7 @@ Type Tree<Type>::findElement(Node<Type>* root, const Type& key)
 {
     if (root == nullptr)
     {
-        std::cout << "Not found.\n";
+        std::cout << "Not found!\n";
         return Type();
     }
     else if (root->data == key)
@@ -185,4 +186,3 @@ Type Tree<Type>::findMax()
     Node<Type>* temp = findEdgeRight(root);
     return temp->data;
 }
-
