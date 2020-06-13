@@ -7,33 +7,34 @@
 
 int main()
 {
-    
     Couple<std::string, Dictionary> couple_word, couple_word_find;
     Couple<size_t, Dictionary> couple_rating, couple_rating_find;
-    std::string word = "penguin";
-    std::string word1 = "mango";
-    Dictionary d, d1;
     
-    //std::cin >> d >> d1;
+    Tree<Couple<std::string, Dictionary>> tree_word; //дерево, отсортированное по ключу "English word"
+    Tree<Couple<size_t, Dictionary>> tree_rating; //дерево, отсортированное по ключу "Rating"
     
-    /*cpl.makeCouple(word, d);
-     cpl1.makeCouple(word1, d1);*/
+    std::string word;
+    Dictionary d;
     
-    Tree<Couple<std::string, Dictionary>> tree_word;
-    Tree<Couple<size_t, Dictionary>> tree_rating;
+    std::vector<Dictionary> vector_words;
     
-    std::vector<Dictionary> words;
-    std::ifstream in("Text.txt");
+    std::ifstream fin("Dictionary.txt");
     
-    while (!in.eof())
+    if (!fin) //
     {
-        in >> d;
-        words.push_back(d);
+        std::cout << "Error open file!\n";
+        return 0;
     }
     
-    for (std::vector<Dictionary>::iterator i = words.begin(); i < words.end(); i++)
+    while (!fin.eof())
     {
-        std::cout << *i << " ";
+        fin >> d;
+        vector_words.push_back(d);
+    }
+    
+    for (std::vector<Dictionary>::iterator i = vector_words.begin(); i < vector_words.end(); i++)
+    {
+        std::cout << *i;
         std::cout << std::endl;
     }
     
@@ -43,17 +44,17 @@ int main()
     switch (choiceTree)
     {
         case 1:
-            for (size_t i = 0; i < words.size(); i++)
+            for (size_t i = 0; i < vector_words.size(); i++)
             {
-                couple_word.makeCouple(words[i].english, words[i]);
+                couple_word.makeCouple(vector_words[i].english, vector_words[i]);
                 tree_word.add(couple_word);
             }
             break;
         case 2:
 
-            for (size_t i = 0; i < words.size(); i++)
+            for (size_t i = 0; i < vector_words.size(); i++)
             {
-                couple_rating.makeCouple(words[i].counter, words[i]);
+                couple_rating.makeCouple(vector_words[i].counter, vector_words[i]);
                 tree_rating.add(couple_rating);
             }
             break;

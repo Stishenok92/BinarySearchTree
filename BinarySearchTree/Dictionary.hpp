@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<string>
+#include<iomanip>
 
 struct Dictionary
 {
@@ -34,7 +35,7 @@ struct Dictionary
     friend std::ostream& operator<<(std::ostream& out, Dictionary& word)
     {
 //        word.counter++;
-        out << word.english << " " << word.russian << " " << word.counter;
+        out << std::left << std::setw(9) << word.counter << std::setw(15) << word.english << std::setw(15) << word.russian;
         return out;
     }
     

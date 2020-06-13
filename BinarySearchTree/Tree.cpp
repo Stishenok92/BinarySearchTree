@@ -81,6 +81,7 @@ Node<Type>* Tree<Type>::erase(Node<Type>* root, const Type& key)
 template<typename Type>
 void Tree<Type>::print()
 {
+    std::cout << std::left << std::setw(10) << "\nRating" << std::setw(15) << "English word" << std::setw(15) << "Русское слово" << "\n";
     print(root);
 }
 
@@ -90,10 +91,13 @@ void Tree<Type>::print(Node<Type>* root)
     if (root != nullptr)
     {
         print(root->left);
-        std::cout << root->data << " ";
+        std::cout << root->data;
         print(root->right);
     }
-    else return;
+    else
+    {
+        return;
+    }
 }
 
 template<typename Type>

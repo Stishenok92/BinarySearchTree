@@ -33,7 +33,7 @@ struct Couple
     
     friend std::ostream& operator<<(std::ostream& out, Couple<Type1, Type2>& couple)
     {
-        out << couple.second << std::endl;
+        out << couple.second << "\n";
         return out;
     }
     

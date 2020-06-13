@@ -24,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AB188AAD24950EEB00AE4AEA /* Dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Dictionary.txt; path = ../../Desktop/Dictionary.txt; sourceTree = "<group>"; };
 		ABC201782494FA24000E7496 /* BinarySearchTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinarySearchTree; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC2017B2494FA24000E7496 /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
 		ABC20183249500B9000E7496 /* Couple.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Couple.hpp; sourceTree = "<group>"; };
@@ -48,6 +49,7 @@
 			children = (
 				ABC2017A2494FA24000E7496 /* BinarySearchTree */,
 				ABC201792494FA24000E7496 /* Products */,
+				AB188AAD24950EEB00AE4AEA /* Dictionary.txt */,
 			);
 			sourceTree = "<group>";
 		};
