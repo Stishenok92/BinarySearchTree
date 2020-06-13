@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ABC2017C2494FA24000E7496 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABC2017B2494FA24000E7496 /* main.cpp */; };
+		ABC2017C2494FA24000E7496 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABC2017B2494FA24000E7496 /* Main.cpp */; };
+		ABC20187249500F8000E7496 /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABC20185249500F8000E7496 /* Tree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,11 @@
 
 /* Begin PBXFileReference section */
 		ABC201782494FA24000E7496 /* BinarySearchTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinarySearchTree; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABC2017B2494FA24000E7496 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		ABC2017B2494FA24000E7496 /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
+		ABC20183249500B9000E7496 /* Couple.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Couple.hpp; sourceTree = "<group>"; };
+		ABC20185249500F8000E7496 /* Tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tree.cpp; sourceTree = "<group>"; };
+		ABC20186249500F8000E7496 /* Tree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tree.hpp; sourceTree = "<group>"; };
+		ABC201892495012E000E7496 /* Dictionary.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Dictionary.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +62,11 @@
 		ABC2017A2494FA24000E7496 /* BinarySearchTree */ = {
 			isa = PBXGroup;
 			children = (
-				ABC2017B2494FA24000E7496 /* main.cpp */,
+				ABC2017B2494FA24000E7496 /* Main.cpp */,
+				ABC20186249500F8000E7496 /* Tree.hpp */,
+				ABC20185249500F8000E7496 /* Tree.cpp */,
+				ABC20183249500B9000E7496 /* Couple.hpp */,
+				ABC201892495012E000E7496 /* Dictionary.hpp */,
 			);
 			path = BinarySearchTree;
 			sourceTree = "<group>";
@@ -119,7 +128,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABC2017C2494FA24000E7496 /* main.cpp in Sources */,
+				ABC20187249500F8000E7496 /* Tree.cpp in Sources */,
+				ABC2017C2494FA24000E7496 /* Main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
