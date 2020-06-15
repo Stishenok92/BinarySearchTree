@@ -13,28 +13,28 @@ struct Dictionary
     
     void setEnglish(std::string eng)
     {
+        ++counter;
         english = eng;
     }
     
     void setRussian(std::string rus)
     {
+        ++counter;
         russian = rus;
     }
     
     std::string translateRus()
     {
-//        ++counter;
         return russian;
     }
     std::string translateEng()
     {
-//        ++counter;
         return english;
     }
     
     friend std::ostream& operator<<(std::ostream& out, Dictionary& word)
     {
-//        word.counter++;
+        word.counter++;
         out << std::left << std::setw(9) << word.counter << std::setw(15) << word.english << std::setw(15) << word.russian;
         return out;
     }
@@ -51,6 +51,7 @@ struct Dictionary
         std::cin >> word.english;
         std::cout << "Enter a word in russian: ";
         std::cin >> word.russian;
+        word.counter = 0;
         return in;
     }
 };
