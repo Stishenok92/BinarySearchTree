@@ -11,7 +11,7 @@ int main()
 //    Couple<size_t, Dictionary> couple_rating;
     
     Tree<Couple<std::string, Dictionary>> tree_word; //дерево, отсортированное по ключу "English word"
-    Tree<Couple<size_t, Dictionary>> tree_rating; //дерево, отсортированное по ключу "Rating"
+//    Tree<Couple<size_t, Dictionary>> tree_rating; //дерево, отсортированное по ключу "Rating"
     
     std::string word;
     Dictionary node_dictionary;
@@ -29,13 +29,15 @@ int main()
     while (!fin.eof()) //переносим все в вектор
     {
         fin >> node_dictionary;
-        vector_words.push_back(node_dictionary);
+        couple_word.makeCouple(node_dictionary.english, node_dictionary);
+        tree_word.add(couple_word);
+//        vector_words.push_back(node_dictionary);
     }
     
-    //    for (std::vector<Dictionary>::iterator i = vector_words.begin(); i < vector_words.end(); i++)
-    //    {
-    //        std::cout << *i << "\n";
-    //    }
+        for (std::vector<Dictionary>::iterator i = vector_words.begin(); i < vector_words.end(); i++)
+        {
+            std::cout << *i << "\n";
+        }
     
     for (size_t i = 0; i < vector_words.size(); i++) //читаем все из вектора в дерево, отсортированное по ключу "English word"
     {
@@ -87,6 +89,11 @@ int main()
         {
             case 0: //exit
             {
+                for (std::vector<Dictionary>::iterator i = vector_words.begin(); i < vector_words.end(); i++)
+                {
+                    std::cout << *i << "\n";
+                }
+                
                 flag = false;
                 break;
             }
@@ -141,7 +148,6 @@ int main()
             {
 //                Couple<size_t, Dictionary> temp;
 //                Tree<Couple<size_t, Dictionary>> tree_rating; //дерево, отсортированное по ключу "Rating"
-//                                
 //                
 //                temp = tree_rating.findMin();
 //                tree_rating.erase(temp);

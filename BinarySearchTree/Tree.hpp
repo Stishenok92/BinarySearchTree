@@ -1,6 +1,8 @@
 #pragma once
 #include<iostream>
 #include<iomanip>
+#include "Couple.hpp"
+#include "Dictionary.hpp"
 
 template<typename Type>
 class Node
