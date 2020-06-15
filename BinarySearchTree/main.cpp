@@ -134,9 +134,9 @@ int main()
             }
             case 6: //find less popular words
             {
-                Tree<Couple<size_t, Dictionary>> tree_rating;
+                Tree<Couple<std::string, Dictionary>> tree_rating;
                 tree_word.transfer(tree_rating);
-                
+                tree_rating.print();
                 
                 
                 
