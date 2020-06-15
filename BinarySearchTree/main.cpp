@@ -134,31 +134,41 @@ int main()
             }
             case 6: //find less popular words
             {
-                Tree<Couple<std::string, Dictionary>> tree_rating;
+                Tree<Couple<size_t, Dictionary>> tree_rating;
+                Couple<size_t, Dictionary> temp;
                 tree_word.transfer(tree_rating);
+                size_t count = 3;
                 tree_rating.print();
                 
+                std::cout << "\nLess popular words:\n";
+                while (count)
+                {
+                    temp = tree_rating.findMin();
+                    std::cout << temp;
+                    tree_rating.erase(temp);
+                    count--;
+                }
                 
-                
-//                Couple<size_t, Dictionary> temp;
-//                Tree<Couple<size_t, Dictionary>> tree_rating; //дерево, отсортированное по ключу "Rating"
-//                
-//                temp = tree_rating.findMin();
-//                tree_rating.erase(temp);
-//                temp = tree_rating.findMin();
-//                tree_rating.erase(temp);
-//                temp = tree_rating.findMin();
-//                tree_rating.erase(temp);
-//                std::cout << temp << std::endl;
-//                break;
+                break;
             }
             case 7: //find most popular words
             {
-//                Couple<size_t, Dictionary> temp;
-//                temp = tree_rating.findMax();
-//                tree_rating.erase(temp);
-//                std::cout << temp << std::endl;
-//                break;
+                Tree<Couple<size_t, Dictionary>> tree_rating;
+                Couple<size_t, Dictionary> temp;
+                tree_word.transfer(tree_rating);
+                size_t count = 3;
+                tree_rating.print();
+                std::cout << "\nMost popular words:\n";
+                
+                while (count)
+                {
+                    temp = tree_rating.findMax();
+                    std::cout << temp;
+                    tree_rating.erase(temp);
+                    count--;
+                }
+                
+                break;
             }
             default:
             {

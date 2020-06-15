@@ -187,26 +187,21 @@ Type Tree<Type>::findMax()
     return temp->data;
 }
 
-
-
-
-
-
 template<typename Type>
-void Tree<Type>::transfer(Tree<Type>& tree)
+void Tree<Type>::transfer(Tree<Couple<size_t, Dictionary>>& tree)
 {
     transfer(root, tree);
 }
 
 template<typename Type>
-void Tree<Type>::transfer(Node<Type>* root, Tree<Type>& tree)
+void Tree<Type>::transfer(Node<Type>* root, Tree<Couple<size_t, Dictionary>>& tree)
 {
-    Couple<std::string, Dictionary> couple_word;
+    Couple<size_t, Dictionary> couple_word;
         
     if (root != nullptr)
     {
         transfer(root->left, tree);
-        couple_word.makeCouple(root->data.first, root->data.second);
+        couple_word.makeCouple(root->data.second.counter, root->data.second);
         tree.add(couple_word);
         transfer(root->right, tree);
     }

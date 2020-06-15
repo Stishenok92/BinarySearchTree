@@ -33,7 +33,7 @@ public:
     Type find(const Type&);
     Type findMin();
     Type findMax();
-    void transfer(Tree<Type>&);
+    void transfer(Tree<Couple<size_t, Dictionary>>&);
     
 private:
     Node<Type>* add(Node<Type>*, const Type&);
@@ -43,6 +43,6 @@ private:
     void deleteTree(Node<Type>*);
     Node<Type>* findEdgeLeft(Node<Type>*);
     Node<Type>* findEdgeRight(Node<Type>*);
-    void transfer(Node<Type>*, Tree<Type>&);
-    
+    void transfer(Node<Type>*, Tree<Couple<size_t, Dictionary>>&);
 };
+
