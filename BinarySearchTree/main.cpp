@@ -11,12 +11,11 @@ int main()
 //    Couple<size_t, Dictionary> couple_rating;
     
     Tree<Couple<std::string, Dictionary>> tree_word; //дерево, отсортированное по ключу "English word"
-//    Tree<Couple<size_t, Dictionary>> tree_rating; //дерево, отсортированное по ключу "Rating"
+    Tree<Couple<size_t, Dictionary>> tree_rating; //дерево, отсортированное по ключу "Rating"
     
-    std::string word;
     Dictionary node_dictionary;
-    
-    std::vector<Dictionary> vector_words;
+    std::string word;
+
     
     std::ifstream fin("Dictionary.txt");
     
@@ -31,19 +30,13 @@ int main()
         fin >> node_dictionary;
         couple_word.makeCouple(node_dictionary.english, node_dictionary);
         tree_word.add(couple_word);
-//        vector_words.push_back(node_dictionary);
     }
     
-        for (std::vector<Dictionary>::iterator i = vector_words.begin(); i < vector_words.end(); i++)
-        {
-            std::cout << *i << "\n";
-        }
-    
-    for (size_t i = 0; i < vector_words.size(); i++) //читаем все из вектора в дерево, отсортированное по ключу "English word"
-    {
-        couple_word.makeCouple(vector_words[i].english, vector_words[i]);
-        tree_word.add(couple_word);
-    }
+//    for (size_t i = 0; i < vector_words.size(); i++) //читаем все из вектора в дерево, отсортированное по ключу "English word"
+//    {
+//        couple_word.makeCouple(vector_words[i].english, vector_words[i]);
+//        tree_word.add(couple_word);
+//    }
     
     //    int choiceTree;
     //    std::cout << "How do you want to build a tree?\n 1. std::string and Dictionary\n 2. size_t and Dictionary\n";
@@ -89,11 +82,6 @@ int main()
         {
             case 0: //exit
             {
-                for (std::vector<Dictionary>::iterator i = vector_words.begin(); i < vector_words.end(); i++)
-                {
-                    std::cout << *i << "\n";
-                }
-                
                 flag = false;
                 break;
             }
@@ -146,6 +134,12 @@ int main()
             }
             case 6: //find less popular words
             {
+                Tree<Couple<size_t, Dictionary>> tree_rating;
+                tree_word.transfer(tree_rating);
+                
+                
+                
+                
 //                Couple<size_t, Dictionary> temp;
 //                Tree<Couple<size_t, Dictionary>> tree_rating; //дерево, отсортированное по ключу "Rating"
 //                

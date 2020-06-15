@@ -186,3 +186,32 @@ Type Tree<Type>::findMax()
     Node<Type>* temp = findEdgeRight(root);
     return temp->data;
 }
+
+
+
+
+
+
+template<typename Type>
+void Tree<Type>::transfer(Tree<Type>& tree)
+{
+    transfer(root, tree);
+}
+
+template<typename Type>
+void Tree<Type>::transfer(Node<Type>*, Tree<Type>& tree)
+{
+    Couple<std::string, Dictionary> couple_word;
+    
+    if (root != nullptr)
+    {
+        transfer(root->left, tree);
+        couple_word.makeCouple(root->data.counter, root->data);
+        tree.add(couple_word);
+        transfer(root->right, tree);
+    }
+    else
+    {
+        return;
+    }
+}
