@@ -207,7 +207,7 @@ void Tree<Type>::transfer(Tree<Couple<size_t, Dictionary>>& tree)
 }
 
 template<typename Type>
-void Tree<Type>::transfer(Node<Type>* root, Tree<Couple<size_t, Dictionary>>& tree)
+void Tree<Type>::transfer(Node<Type>* root, Tree<Couple<size_t, Dictionary>>& tree) //метод копирования данных из одного дерева в другое
 {
     Couple<size_t, Dictionary> couple_word;
         

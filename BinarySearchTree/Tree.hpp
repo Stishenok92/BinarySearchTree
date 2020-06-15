@@ -43,6 +43,6 @@ private:
     void deleteTree(Node<Type>*);
     Node<Type>* findEdgeLeft(Node<Type>*);
     Node<Type>* findEdgeRight(Node<Type>*);
-    void transfer(Node<Type>*, Tree<Couple<size_t, Dictionary>>&);
+    void transfer(Node<Type>*, Tree<Couple<size_t, Dictionary>>&); //метод копирования данных из одного дерева в другое
 };
 

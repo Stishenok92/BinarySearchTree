@@ -6,7 +6,6 @@ struct Couple
 {
     Type1 first;
     Type2 second;
-    
     Couple() = default;
     
     Couple<Type1, Type2>& makeCouple(const Type1& temp_first, const Type2& temp_second)

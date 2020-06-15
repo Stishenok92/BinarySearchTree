@@ -26,7 +26,7 @@ int main()
     
     bool flag = true;
     
-    while (flag)
+    while (flag) //меню команд
     {
         std::cout << "\nCommand:\n"
         << "1. Add word\n"

@@ -28,6 +28,7 @@ struct Dictionary
         ++counter;
         return russian;
     }
+    
     std::string translateEng()
     {
         ++counter;
