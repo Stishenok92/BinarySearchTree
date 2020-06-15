@@ -2,8 +2,6 @@
 #include "Couple.hpp"
 #include "Dictionary.hpp"
 #include <fstream>
-#include <vector>
-
 
 int main()
 {
@@ -91,6 +89,9 @@ int main()
                 std::cout << "Translation: ";
                 couple_word = tree_word.find(couple_word_find);
                 std::cout << couple_word.second.translateRus() << "\n";
+                tree_word.erase(couple_word_find);
+                tree_word.add(couple_word);
+                
                 break;
             }
             case 5: //print
@@ -104,13 +105,12 @@ int main()
                 Couple<size_t, Dictionary> temp;
                 tree_word.transfer(tree_rating);
                 size_t count = 3;
-                tree_rating.print();
-                
                 std::cout << "\nLess popular words:\n";
+                
                 while (count)
                 {
                     temp = tree_rating.findMin();
-                    std::cout << temp;
+                    std::cout << temp.second.translateEng() << "\n";
                     tree_rating.erase(temp);
                     count--;
                 }
@@ -123,13 +123,12 @@ int main()
                 Couple<size_t, Dictionary> temp;
                 tree_word.transfer(tree_rating);
                 size_t count = 3;
-                tree_rating.print();
                 std::cout << "\nMost popular words:\n";
                 
                 while (count)
                 {
                     temp = tree_rating.findMax();
-                    std::cout << temp;
+                    std::cout << temp.second.translateEng() << "\n";
                     tree_rating.erase(temp);
                     count--;
                 }
