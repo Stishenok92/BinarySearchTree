@@ -25,10 +25,12 @@ struct Dictionary
     
     std::string translateRus()
     {
+        ++counter;
         return russian;
     }
     std::string translateEng()
     {
+        ++counter;
         return english;
     }
     
