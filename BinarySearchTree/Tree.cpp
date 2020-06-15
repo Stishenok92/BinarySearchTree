@@ -56,24 +56,37 @@ Node<Type>* Tree<Type>::erase(Node<Type>* root, const Type& key)
     }
     else
     {
+        bool flag = true;
         temp = root;
         
-        if (root->left == nullptr)
+        if (root->right != nullptr)
         {
-            temp = root->right;
-            delete root;
-            return temp;
+            if (root->right->data == key)
+            {
+                flag = false;
+                root->right = erase(root->right, key);
+            }
         }
-        else if (root->right == nullptr)
+        
+        if (flag)
         {
-            temp = root->left;
-            delete root;
-            return temp;
+            if (root->left == nullptr)
+            {
+                temp = root->right;
+                delete root;
+                return temp;
+            }
+            else if (root->right == nullptr)
+            {
+                temp = root->left;
+                delete root;
+                return temp;
+            }
+            
+            temp = findEdgeLeft(root->right);
+            root->data = temp->data;
+            root->right = erase(root->right, temp->data);
         }
-
-        temp = findEdgeLeft(root->right);
-        root->data = temp->data;
-        root->right = erase(root->right, temp->data);
     }
     
     return root;
