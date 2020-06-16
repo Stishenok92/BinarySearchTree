@@ -223,3 +223,34 @@ void Tree<Type>::transfer(Node<Type>* root, Tree<Couple<size_t, Dictionary>>& tr
         return;
     }
 }
+
+template<typename Type>
+Node<Type>* Tree<Type>::findNode(const Type& key)
+{
+    return findNode(root, key);
+}
+
+template<typename Type>
+Node<Type>* Tree<Type>::findNode(Node<Type>* root, const Type& key)
+{
+    if (root == nullptr)
+    {
+        std::cout << "Not found!\n";
+        return nullptr;
+    }
+    else if (root->data == key)
+    {
+        return root;
+    }
+    else
+    {
+        if (key < root->data)
+        {
+            return findNode(root->left, key);
+        }
+        else
+        {
+            return findNode(root->right, key);
+        }
+    }
+}

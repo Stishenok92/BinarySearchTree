@@ -82,16 +82,14 @@ int main()
             }
             case 4: //find word
             {
+                Node<Couple<std::string, Dictionary>>* root = nullptr;
                 std::string word;
                 std::cout << "Enter a word in english: ";
                 std::cin >> word;
                 couple_word_find.makeCouple(word, node_dictionary);
                 std::cout << "Translation: ";
-                couple_word = tree_word.find(couple_word_find);
-                std::cout << couple_word.second.translateRus() << "\n";
-                tree_word.erase(couple_word_find);
-                tree_word.add(couple_word);
-                
+                root = tree_word.findNode(couple_word_find);
+                std::cout << root->data.second.translateRus() << "\n";
                 break;
             }
             case 5: //print

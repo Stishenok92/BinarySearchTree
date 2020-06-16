@@ -31,6 +31,7 @@ public:
     void erase(const Type&);
     void print();
     Type find(const Type&);
+    Node<Type>* findNode(const Type&);
     Type findMin();
     Type findMax();
     void transfer(Tree<Couple<size_t, Dictionary>>&);
@@ -40,6 +41,7 @@ private:
     Node<Type>* erase(Node<Type>*, const Type&);
     void print(Node<Type>*);
     Type findElement(Node<Type>*,const Type&);
+    Node<Type>* findNode(Node<Type>*,const Type&);
     void deleteTree(Node<Type>*);
     Node<Type>* findEdgeLeft(Node<Type>*);
     Node<Type>* findEdgeRight(Node<Type>*);
