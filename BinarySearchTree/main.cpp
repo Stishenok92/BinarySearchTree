@@ -41,6 +41,7 @@ int main()
         
         int choice;
         std::cin >> choice;
+        
         switch (choice)
         {
             case 0: //exit
@@ -146,5 +147,7 @@ int main()
         }
     }
     
+    fin.close();
+    system("pause");
     return 0;
 }
