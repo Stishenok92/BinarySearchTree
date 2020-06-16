@@ -11,7 +11,6 @@ public:
     Type data;
     Node* left;
     Node* right;
-    
     Node(const Type& temp_data, Node* temp_left = nullptr, Node* temp_right = nullptr) : data(temp_data), left(temp_left), right(temp_right) {};
     ~Node() = default;
 };
@@ -21,7 +20,6 @@ class Tree
 {
 private:
     Node<Type>* root;
-    
 public:
     Tree() : root(nullptr) {}
     Tree(const Type& key) : root(new Node<Type>(key)) {}

@@ -88,7 +88,6 @@ Node<Type>* Tree<Type>::erase(Node<Type>* root, const Type& key)
             root->right = erase(root->right, temp->data);
         }
     }
-    
     return root;
 }
 
