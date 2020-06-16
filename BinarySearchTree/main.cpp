@@ -89,7 +89,12 @@ int main()
                 couple_word_find.makeCouple(word, node_dictionary);
                 std::cout << "Translation: ";
                 root = tree_word.findNode(couple_word_find);
-                std::cout << root->data.second.translateRus() << "\n";
+                
+                if (root)
+                {
+                    std::cout << root->data.second.translateRus() << "\n";
+                }
+                
                 break;
             }
             case 5: //print
